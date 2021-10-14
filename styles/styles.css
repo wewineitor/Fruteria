@@ -1,0 +1,238 @@
+* {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #F2F2F2;
+}
+/*MENU DE NAVEGACION*/
+header {
+    background: #1abc9c;
+    width: 100%;
+}
+header nav ul {
+    list-style: none;
+    text-align: center;
+}
+header nav ul li {
+    display: inline-block;
+    padding: 1rem;
+}
+header nav ul li a{
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1.5em;
+    color: #000;
+}
+header nav ul li a:hover {
+    background: #16a085;
+}
+.show-menu {
+    display: none;
+    cursor: pointer;
+}
+.menu-input {
+    display: none;
+}
+/*LAYOUTS*/
+/*HOME*/
+h1 {
+    font-size: 4em;
+}
+.contenedor-logo{
+    text-align: center;
+}
+#logo {
+    width: 30vw;
+    height: 40vh;
+}
+.mision-vision {
+    font-size: 1.5em;   
+    text-align: justify;
+    width: 90vw;
+    padding: 1rem;
+}
+/*PRODUCTOS*/
+#container-frutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.card {
+    width: 10rem;
+    background: #2ecc71;
+    border-radius: 1rem;
+    margin: auto;
+}
+.add-car {
+    background: #3498db;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+/*CARRITO*/
+.title-center{
+    text-align: center;
+    margin-top: 5vh;
+}
+table {
+    margin: auto;
+    margin-top: 5vh;
+    font-size: 2.5rem;
+    text-align: center;
+    border-collapse: collapse;
+    width: 80vw;
+    background: #F2F2F2;
+    color: #000;
+    padding: 1rem;
+}
+thead {
+    background: #f1c40f;
+    border-bottom: solid 1px black;
+}
+tbody {
+    color: #000;
+}
+
+tbody tr:hover {
+    background: #E7E7E7;
+}
+#total, #comprar {
+    font-size: 1.5em;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+#comprar {
+    text-align: center;
+    width: 80vw;
+    height: 5vh;
+    cursor: pointer;
+    background: #f39c12;
+    border: none;
+    border-radius: .5rem;
+}
+/*FORMULARIOS*/
+.form {
+    background: #1abc9c;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 1em;
+    padding: 3.5em 1.5em;
+    margin-top: 3rem;
+}
+.form-container {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 100%;
+}
+.form-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 0.4rem;
+    color: #000;
+}
+.form-input {
+    font-size: 2em;
+    color: #000;
+    outline: none;
+    border-radius: .5rem;
+    border: none;
+}
+.form-input:focus {
+    border: #3498db;
+}
+.btn-form {
+    background: #2ecc71;
+    font-size: 3em;
+    color: #000;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+.btn-form:hover {
+    background: #27ae60;
+}
+.form-link {
+    color: blue;
+    text-align: center;
+    font-size: 1em;
+}
+/*FOOTER*/
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #1abc9c;
+    text-align: center;
+}
+/*Media Queries*/
+@media (max-width: 932px) {
+    #logo {
+        width: 100vw;
+        height: 40vh;
+    }
+    header nav label {
+        text-align:left;
+        font-size: 3em;
+    }
+    header nav ul li{
+        padding: 0;
+        display: none;
+    }
+    .show-menu {
+        display: block;
+    }
+    .menu-input:checked + nav ul li{
+        display: flex;
+    }
+    .form, .mision-vision {
+        margin-bottom: 15vh;
+    }
+    #container-frutas {
+        margin-bottom: 15vh;
+    }
+}
+@media (max-width: 540px) {
+    #container-frutas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        text-align: center;
+
+    }
+    table {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 320px) {
+    #container-frutas {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        text-align: center;
+    }
+    .form-title {
+        font-size: 3.5rem;
+    }
+    table {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 293px) {
+    header nav ul li a{
+        font-size: 1em;
+    }
+    .form-title {
+        font-size: 3rem;
+    }
+}
