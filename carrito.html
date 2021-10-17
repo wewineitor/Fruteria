@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <label class="show-menu" for="menu"><img src="./images/icons/menu.png" alt="menu-icon"></label>
+        <input type="checkbox" id="menu" class="menu-input">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="inicio_sesion.html">Inicio de sesion/Registro</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h2 class="title-center">Productos en el carrito de Usuario</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>manzana</td>
+                    <td>2</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <p id="total">Total: 10$</p>
+            <button id = 'comprar'>COMPRAR</button>
+        </div>
+    </div>
+    <footer>Edwin Isaac Avila Garcia. Derechos reservados.</footer>
+</body>
+</html>

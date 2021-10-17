@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <label class="show-menu" for="menu"><img src="./images/icons/menu.png" alt="menu-icon"></label>
+        <input type="checkbox" id="menu" class="menu-input">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="inicio_sesion.html">Inicio de sesion/Registro</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="carrito.html">Carrito</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <form action="./php/scripts/Registro.php" method="post" class="form" id="form-registro"> 
+        <div class="form-container">
+            <h2 class="form-title">REGISTRO</h2>
+            <input class="form-input" type="text" placeholder="Nombre de usuario" name="usuario">
+            <input class="form-input" type="email" placeholder="Correo electronico" name="email">
+            <input class="form-input" type="password" placeholder="Contraseña" name="contra">
+            <button class="btn-form" type="submit" id="registro">Crear Cuenta</button>
+        </div>
+    </form>
+    <footer>Edwin Isaac Avila Garcia. Derechos reservados.</footer>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/crear_cuenta.js"></script>
+</body>
+</html>
