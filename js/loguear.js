@@ -12,7 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
             url: './php/scripts/Login.php',
             data: data,
             success: (response) => {
-                console.log(response)
+                if(response == 'no') {
+                    alert('Correo o contraseña invalidos');
+                }
+                else {
+                    localStorage.setItem("usuario", response);
+                    location.href = './cuenta.html';
+                }
             },
             error: () => {
                 alert('Error')

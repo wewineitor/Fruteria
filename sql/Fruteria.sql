@@ -33,3 +33,23 @@ create procedure loguear(in email_parametro varchar(40), in contra_parametro var
 begin
 	select usuario from usuarios where email = email_parametro and contra = contra_paramtro;
 end $
+
+delimiter $
+create procedure agregarCarrito(in usuario_parametro varchar(40), in fruta varchar(40), in precio int)
+begin
+	declare fruta_existente varchar(40);
+    declare usuario_existente varchar(40);
+    
+    select nombre_fruta, usuario 
+    into fruta_existente, usuario_existente
+    from carrito 
+    where usuario = usuario_parametro and nombre_fruta = fruta; 
+    
+    if fruta = fruta_existente and usuario_existente = usuario_parametro then
+		update carrito 
+        set cantidad = cantidad + 1, precio = precio * cantidad
+        where nombre_fruta = fruta and usuario = usuario_parametro;
+	else
+		insert into carrito values(usuario_parametro, fruta, 1, precio);
+	end if;
+end$

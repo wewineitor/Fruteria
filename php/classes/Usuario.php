@@ -50,4 +50,23 @@ class Usuario extends Conexion{
             echo "no";
         }
     }
+
+    public function agregarAlCarrito($fruta, $precio) {
+        $consulta = $this->conectar()->prepare("call agregarCarrito(?, ?, ?)");
+        $consulta->bindParam(1, $this->usuario);
+        $consulta->bindParam(2, $fruta);
+        $consulta->bindParam(3, $precio);
+        $consulta->execute();
+    }
+
+    public function obtenerCarrito() {
+        $consulta = $this->conectar()->prepare("select * from carrito where usuario = ?");
+        $consulta->bindParam(1, $this->usuario);
+        $consulta->execute();
+        $resultado = array();
+        while($fila=$consulta->fetch(PDO::FETCH_ASSOC)) {
+            $resultado[] = $fila;
+        }
+        echo json_encode($resultado);
+    }
 }
