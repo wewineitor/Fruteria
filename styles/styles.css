@@ -4,9 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    background: #F2F2F2;
-}
+
 /*MENU DE NAVEGACION*/
 header {
     background: #1abc9c;
@@ -67,9 +65,10 @@ h1 {
 }
 .card {
     width: 10rem;
-    background: #2ecc71;
-    border-radius: 1rem;
+    border-radius: 5px;
     margin: auto;
+    border: solid 1px #eee;
+    box-shadow: 0 5px 5px rgb(0, 0, 0, 0.1);
 }
 .add-car {
     background: #3498db;
@@ -121,6 +120,15 @@ tbody tr:hover {
     background: #f39c12;
     border: none;
     border-radius: .5rem;
+}
+
+.btn-delete {
+    background-color: #f12323;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: .5rem;
+    cursor: pointer;
 }
 /*FORMULARIOS*/
 .form {
@@ -219,6 +227,9 @@ footer {
     }
     table {
         font-size: 1.5rem;
+    }
+    .btn-delete {
+        padding: 0;
     }
 }
 @media (max-width: 320px) {

@@ -59,7 +59,7 @@ class Usuario extends Conexion{
         $consulta->execute();
     }
 
-    public function obtenerCarrito() {
+    private function obtenerDatosCarrito() {
         $consulta = $this->conectar()->prepare("select * from carrito where usuario = ?");
         $consulta->bindParam(1, $this->usuario);
         $consulta->execute();
@@ -67,6 +67,35 @@ class Usuario extends Conexion{
         while($fila=$consulta->fetch(PDO::FETCH_ASSOC)) {
             $resultado[] = $fila;
         }
-        echo json_encode($resultado);
+        return $resultado;
+    }
+
+    public function obtenerCarrito() {
+        echo json_encode($this->obtenerDatosCarrito());
+    }
+
+    public function eliminarFruta($usuario, $fruta) {
+        $consulta = $this->conectar()->prepare("delete from carrito where usuario = ? and nombre_fruta = ?");
+        $consulta->bindParam(1, $usuario);
+        $consulta->bindParam(2, $fruta);
+        $consulta->execute();
+    }
+
+    public function generarTicket() {
+        $datos = $this->obtenerDatosCarrito();
+        $archivo = fopen("../../tickets/ticket.txt", "a");
+        $total = 0;
+        foreach ($datos as $dato) {
+            fputs($archivo, "Fruta: {$dato['nombre_fruta']}\n");
+            fputs($archivo, "Cantidad: {$dato['cantidad']}\n");
+            fputs($archivo, "Precio: {$dato['precio']}\n");
+            fputs($archivo, "---------------------------------------------------\n");
+            $total += $dato['precio'];
+        }
+        fputs($archivo, "Precio total: {$total}\n");
+        fclose($archivo);
+        $consulta = $this->conectar()->prepare("delete from carrito where usuario = ?");
+        $consulta->bindParam(1, $this->usuario);
+        $consulta->execute();   
     }
 }

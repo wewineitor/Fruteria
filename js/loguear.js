@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
             data: data,
             success: (response) => {
                 if(response == 'no') {
-                    alert('Correo o contraseña invalidos');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ERROR',
+                        text: 'Correo o contraseña invalidos'
+                    })
                 }
                 else {
                     localStorage.setItem("usuario", response);

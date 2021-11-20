@@ -13,14 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
             data: data,
             success: (response) => {
                 if(response == "no") {
-                    alert('Ese usuario o contraseña ya estan en uso');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ERROR',
+                        text: 'Ese usuario o correo ya estan en uso'
+                    })
                 }
                 else {
-                    alert('Cuenta registrada con exito');
+                    Swal.fire({
+                        icon: 'success',
+                        text: 'Cuenta registrada con exito'
+                    })
                 }
             },
             error: () => {
                 alert('Error')
+                Swal.fire({
+                    icon: 'error',
+                    text: 'Error en la conexion'
+                })
             }
         });
     })

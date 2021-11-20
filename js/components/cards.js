@@ -38,7 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const agregarCarrito = data => {
         if(localStorage.getItem("usuario") == null) {
-            alert("Debe conectarse para poder realizar esta accion");
+            Swal.fire({
+                icon: 'error',
+                title: 'ERROR',
+                text: 'Debe conectarse para poder realizar esta accion'
+            })
         }
         else {
             const json = {
@@ -56,10 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 url: './php/scripts/agregarCarrito.php',
                 data: JSON.stringify(json),
                 success: () => {
-                    alert("Producto agregado al carrito");
+                    Swal.fire({
+                        icon: 'success',
+                        text: 'Producto agregado al carrito'
+                    })
                 },
                 error: (jqXHR, exception) => {
-                    alert('Error en la conexion: ', exception);
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Error con la conexion'
+                    })
                 }
             })
         }
