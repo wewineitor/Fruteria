@@ -1,33 +1,17 @@
-Fruta: durazno
+Fruta: manzana
 Cantidad: 1
-Precio: 10
+Precio: 5
+---------------------------------------------------
+Fruta: uva
+Cantidad: 2
+Precio: 30
 ---------------------------------------------------
 Fruta: piña
-Cantidad: 1
-Precio: 20
----------------------------------------------------
-Precio total: 30
-ad: 1
-Precio: 15
----------------------------------------------------
-Fruta: sandia
 Cantidad: 2
-Precio: 36
+Precio: 40
 ---------------------------------------------------
-Precio total: 81
-Fruta: manzana
-Cantidad: 1
-Precio: 5
+Fruta: durazno
+Cantidad: 3
+Precio: 30
 ---------------------------------------------------
-Fruta: naranja
-Cantidad: 1
-Precio: 7
----------------------------------------------------
-Precio total: 12
-Precio total: 0
-Precio total: 0
-Fruta: manzana
-Cantidad: 1
-Precio: 5
----------------------------------------------------
-Precio total: 5
+Precio total: 105
